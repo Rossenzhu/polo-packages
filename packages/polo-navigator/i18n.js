@@ -5,10 +5,10 @@ const i18n = createI18n({
   locale: "ja",
   messages: {
     en: {
-      hello: "Hello justin!",
+      hello: "Hello",
     },
     ja: {
-      hello: "ジャスティンをファック",
+      hello: "こんにちは",
     },
   },
 });
