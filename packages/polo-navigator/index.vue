@@ -7,7 +7,7 @@
       <li>More</li>
     </nav>
 
-    <div>{{ t("hello") }}</div>
+    <div>{{ t("viewall") }}</div>
     <button type="button" @click="handleToggle">Toggle</button>
   </div>
 </template>

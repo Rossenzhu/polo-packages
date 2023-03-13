@@ -8,16 +8,12 @@
     <link rel="stylesheet" href="./lib/style.css" />
   </head>
   <body>
-    <script src="/lib/polo-navigator.umd.cjs"></script>
+    <script src="/lib/loader.js"></script>
 
     <script>
-      PoloNavigator.eventBus.$on(
-        PoloNavigator.events.CUSTOM_EVENT,
-        (...args) => {
-          console.log({ args });
-          console.log("here");
-        }
-      );
+      define(["/lib/polo-navigator.umd.cjs"], (a) => {
+        console.log({ a });
+      });
     </script>
 
     <div id="app"></div>

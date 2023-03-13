@@ -10,12 +10,14 @@ export default defineConfig({
       entry: resolve(__dirname, "./packages/polo-navigator/main.js"),
       name: "PoloNavigator",
       fileName: "polo-navigator",
-      formats: ["es", "umd"],
+      formats: ["es", "cjs", "umd"],
     },
 
     cssCodeSplit: false,
 
     outDir: "lib",
+
+    manifest: true,
   },
 
   define: {
