@@ -1,21 +1,14 @@
 <template>
-  <div class="polo-navigator" :style="navStyle">
-    <nav>
-      <li>Home</li>
-      <li>About</li>
-      <li>Contact</li>
-      <li>More</li>
-    </nav>
-
-    <div>{{ t("viewall") }}</div>
-    <button type="button" @click="handleToggle">Toggle</button>
-  </div>
+  <header :class="[s.wrapper]" id="polo-navigator">
+    <Nav :class="s.nav" :bodyWidth="bodyWidth" />
+  </header>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, nextTick } from "vue";
+import { ref, computed, onMounted, nextTick, defineAsyncComponent } from "vue";
 import { useI18n } from "vue-i18n";
 import eventBus, { events } from "./bus";
+import { useScreenFix } from "./composables";
 
 const theme = ref("light");
 
@@ -32,6 +25,8 @@ const navStyle = computed(() =>
     : { backgroundColor: "lightblue", color: "indianred" }
 );
 
+const { widthClassname, bodyWidth } = useScreenFix();
+
 onMounted(() => {
   nextTick(() => {
     eventBus.$emit(events.PROFILE_CHANGE, {
@@ -41,10 +36,12 @@ onMounted(() => {
 });
 
 const { t } = useI18n();
+
+const Nav = defineAsyncComponent(() => import("./components/Nav/index.vue"));
 </script>
 
-<style lang="scss">
-.polo-navigator {
+<style lang="scss" module="s">
+.wrapper {
   padding: 12px;
 
   nav {

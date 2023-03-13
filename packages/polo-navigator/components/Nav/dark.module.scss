@@ -1,0 +1,36 @@
+:global(body.dark-theme) {
+  .navi {
+    .logo {
+      background-image: url(~./imgs/logo.dark.svg);
+    }
+    .navItem {
+      color: $WHITE;
+      &:hover {
+        color: $GRN800;
+        &.more {
+          .text::after {
+            background-image: url(~./imgs/sarrow.hover.png);
+          }
+        }
+      }
+      &.more {
+        .text::after {
+          background-image: url(~./imgs/sarrow.dark.png);
+        }
+      }
+      .subNavi {
+        background-color: $GRY800;
+        .subNaviItem {
+          color: $WHITE;
+          &:hover {
+            background-color: $GRY700;
+          }
+        }
+      }
+    }
+  }
+
+  .nftLogo {
+    background-image: url(~./imgs/apenft-nft-logo.dark.png);
+  }
+}

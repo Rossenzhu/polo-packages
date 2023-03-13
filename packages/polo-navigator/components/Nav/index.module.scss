@@ -1,0 +1,159 @@
+@import './dark.module.scss';
+.navi {
+  // display: flex;
+  // align-items: center; 
+  // justify-content: flex-start;
+  .navItem {
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    // display: flex;
+    // align-items: center;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 16px;
+    color: $GRY700;
+    font-weight: 600;
+    position: relative;
+    > .badge {
+      height: 16px;
+    }
+    cursor: pointer;
+    &:hover {
+      color: $GRN900;
+      &.more {
+        .text::after {
+          background-image: url(~./imgs/sarrow.hover.png);
+          transform: rotateZ(180deg)
+        }
+      }
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &.more {
+      .text {
+        position: relative;
+        display: flex;
+        align-items: center;
+        &::after {
+          content: '';
+          display: inline-block;
+          width: 10px;
+          height: 6px;
+          background-image: url(~./imgs/sarrow.light.png);
+          background-size: 10px auto;
+          background-repeat: no-repeat;
+          background-position: center;
+          transition: 50ms;
+          margin-left: 4px;
+        }
+      }
+      &:hover {
+        .subNavi {
+          height: auto;
+          padding: 8px;
+        }
+      }
+      .subNavi {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background-color: $GRY100;
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        box-shadow: 0px 4px 8px rgba($BLACK, 0.15);
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        // transition: 50ms;
+        width: auto;
+        .subNaviItem {
+          min-width: 320px;
+          display: flex;
+          // min-height: 64px;
+          height: auto;
+          color: $GRY900;
+          border-radius: 4px;
+          margin-bottom: 8px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          &:hover {
+            background-color: $GRY200;
+            // &::after {
+            //   visibility: visible;
+            // }
+          }
+          padding: 12px;
+          .ctx {
+            flex: 1;
+            margin-left: 25px;
+            .name {
+              display: flex;
+              align-items: flex-start;
+              font-size: 20px;
+              line-height: 24px;
+            }
+            .desc {
+              color: $GRY500;
+              font-size: 12px;
+              line-height: 16px;
+              font-weight: 400;
+            }
+          }
+          // &::after {
+          //   content: '';
+          //   width: 24px;
+          //   height: 32px;
+          //   background-position: bottom;
+          //   background-size: 24px 24px;
+          //   background-repeat: no-repeat;
+          //   background-image: url(~./imgs/arrow.light.png);
+          //   visibility: hidden;
+          // }
+        }
+      }
+    }
+  }
+  .logo {
+    height: 50px;
+    padding: 10px 0;
+    width: 128px;
+    line-height: normal;
+    background-image: url(~./imgs/logo.light.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.nftLogo {
+  width: 14px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(~./imgs/apenft-nft-logo.light.png);
+  background-position: center;
+  background-size: 14px auto;
+  background-repeat: no-repeat;
+  margin-right: 6px;
+}
+
+.badge {
+  width: 24px;
+  height: 12px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 24px auto;
+  margin-left: 2px;
+  &.hot {
+    background-image: url(~./imgs/badge.hot.png);
+  }
+  &.new {
+    background-image: url(~./imgs/badge.new.png);
+  }
+}

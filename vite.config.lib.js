@@ -23,4 +23,22 @@ export default defineConfig({
   define: {
     "process.env": {},
   },
+
+  resolve: {
+    alias: {
+      "@pkg": fileURLToPath(new URL("./packages", import.meta.url)),
+    },
+    extensions: [".mjs", ".js", ".mts", ".ts", ".jsx", ".tsx", ".json", ".vue"],
+  },
+
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "~@pkg/assets/styles/_variables.scss";
+          @import "~@pkg/assets/styles/_mixins.scss";
+        `,
+      },
+    },
+  },
 });

@@ -1,0 +1,125 @@
+.loginCont {
+  .link {
+    color: $GRY700;
+    line-height: 50px;
+    position: relative;
+    cursor: pointer;
+    &:first-child {
+      margin-right: 16px;
+    }
+    &:hover {
+      color: $GRN900;
+      .wallet {
+        display: block;
+      }
+    }
+    
+  }
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  
+  .wallet {
+    width: 375px;
+    padding: 16px 0;
+    position: absolute;
+    line-height: 1.5;
+    display: none;
+    top: 50px;
+    right: 0;
+    background-color: $GRY100;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    .overview {
+      background-color: $GRY200;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin: 0 16px;
+      margin-bottom: 24px;
+      position: relative;
+      .title {
+        color: $GRY900;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 20px;
+        margin-bottom: 7px;
+        display: flex;
+        align-items: center;
+        > .eye {
+          background-image: url(~./eye.light.png);
+          background-repeat: no-repeat;
+          background-size: 24px auto;
+          background-position: center;
+          height: 24px;
+          width: 24px;
+          cursor: pointer;
+          margin-left: 4px;
+          &:active {
+            opacity: .5;
+          }
+        }
+      }
+      .balance {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 46px;
+        color: $GRN900;
+        display: flex;
+        align-items: flex-end;
+        > span {
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 38px;
+          margin-left: 7px;
+        }
+      }
+      .fait {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 23px;
+        color: $GRY600;
+      }
+      
+    }
+    .accountList {
+      > .item {
+        padding: 16px 12px;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 20px;
+        color: $GRY900;
+        margin: 0 8px;
+        border-radius: 8px;
+        position: relative;
+        &:hover {
+          background-color: $GRY200;
+        }
+        .icon {
+          margin-right: 24px;
+        }
+      }
+    }
+  }
+}
+.accountList .item:hover, .overview {
+  &::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url(~./arrow.light.png);
+    background-size: 24px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: 16px;
+    transform: translateY(-50%);
+    top: 50%;
+  }
+}
+
+@import './dark.module.scss'

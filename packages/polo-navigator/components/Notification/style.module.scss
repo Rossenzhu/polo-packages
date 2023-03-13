@@ -1,0 +1,95 @@
+$zIndexNotice: 110000;
+.notification {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  bottom: 0;
+  width: 320px;
+  background: $GRY200;
+  padding: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  transition: 200ms;
+  overflow: auto;
+  z-index: $zIndexNotice + 1;
+  .article {
+    margin-bottom: 12px;
+    background: $WHITE;
+    display: block;
+    padding: 16px 12px;
+    border-radius: 8px;
+    .title {
+      display: flex;
+      align-items: flex-start;
+      color: $GRY900;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 18px;
+      justify-content: space-between;
+      word-wrap: break-word;
+      margin-bottom: 8px;
+      &::after {
+        color: $GRY500;
+        content: attr(date);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        margin-left: 12px;
+        white-space: nowrap;
+      }
+    }
+    .context {
+      line-height: 17px;
+      font-weight: 400;
+      font-size: 12px;
+      color: $GRY600;
+      > a {
+        color: $GRN900;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $zIndexNotice;
+}
+
+:global(body.dark-theme) {
+  .notification {
+    background: $GRY900;
+    box-shadow: 0px 4px 12px $BLACK;
+    border: 1px solid $GRY700;
+    padding: 0;
+
+    .article {
+      background: $GRY700;
+      border-radius: 0;
+      margin-bottom: 8px;
+      padding: 0 16px;
+      padding-top: 8px;
+      padding-bottom: 16px;
+      .title {
+        color: $WHITE;
+        line-height: 16px;
+        margin-bottom: 8px;
+        &::after {
+          color: $GRY500;
+        }
+      }
+      .context {
+        line-height: 17px;
+        font-weight: 400;
+        font-size: 12px;
+        color: $GRY400;
+        > a {
+          color: $GRN900;
+        }
+      }
+    }
+  }
+}

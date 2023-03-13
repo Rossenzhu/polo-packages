@@ -2,21 +2,9 @@ import { resolve } from "path";
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import { viteStaticCopy } from "vite-plugin-static-copy";
 
 export default defineConfig({
-  plugins: [
-    vue(),
-
-    viteStaticCopy({
-      targets: [
-        {
-          src: resolve(__dirname, "./lib") + "/[!.]*",
-          dest: "./lib",
-        },
-      ],
-    }),
-  ],
+  plugins: [vue()],
 
   build: {
     cssCodeSplit: false,
@@ -34,6 +22,7 @@ export default defineConfig({
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
       "@lib": fileURLToPath(new URL("./lib", import.meta.url)),
+      "@pkg": fileURLToPath(new URL("./packages", import.meta.url)),
       "@nav": fileURLToPath(new URL("./navigator", import.meta.url)),
     },
     extensions: [".mjs", ".js", ".mts", ".ts", ".jsx", ".tsx", ".json", ".vue"],
@@ -41,5 +30,16 @@ export default defineConfig({
 
   define: {
     "process.env": {},
+  },
+
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @import "../packages/assets/styles/_variables.scss";
+          @import "../packages/assets/styles/_mixins.scss";
+        `,
+      },
+    },
   },
 });

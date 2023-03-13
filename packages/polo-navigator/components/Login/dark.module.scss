@@ -1,0 +1,41 @@
+:global(body.dark-theme) {
+  .loginCont {
+    .link {
+      color: $WHITE;
+      &:hover {
+        color: $GRN800;
+      }
+    }
+
+    .wallet {
+      background-color: $GRY800;
+      box-shadow: 0px 6px 10px rgba($BLACK, 0.5);
+      .overview {
+        background-color: rgba($BLACK, 0.5);
+        .title {
+          color: $WHITE;
+        }
+        .balance {
+          color: $GRN800;
+        }
+        .fait {
+          color: $GRY400;
+        }
+      }
+      .accountList {
+        > .item {
+          color: $WHITE;
+          &:hover {
+            background-color: $GRY700;
+          }
+        }
+      }
+    }
+  }
+  .accountList .item:hover,
+  .overview {
+    &::after {
+      background-image: url(~./arrow.dark.png);
+    }
+  }
+}

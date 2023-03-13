@@ -1,0 +1,57 @@
+/**
+ * Color and variable definitions
+ * This file must not output any CSS content, it can only be used to define variables
+ */
+
+// normal 常规色
+$BLACK: #000000;
+$BLACK_8: rgba($BLACK, 0.8);
+$BLACK_6: rgba($BLACK, 0.6);
+$BLACK_2: rgba($BLACK, 0.2);
+$BLACK_1: rgba($BLACK, 0.1);
+$WHITE: #ffffff;
+$WHITE_6: rgba($WHITE, 0.6);
+
+//primary 主色
+$GRN950: #106f44;
+$GRN900: #1a8f5c;
+$GRN800: #119e5f;
+$GRN900_5: rgba($GRN900, 0.5);
+$GRN900_3: rgba($GRN900, 0.3);
+$GRN900_15: rgba($GRN900, 0.15);
+$GRN900_1: rgba($GRN900, 0.1);
+$RED950: #9a2c2e;
+$RED900: #c44749;
+$RED800: #d64d4f;
+$RED900_5: rgba($RED900, 0.5);
+$RED900_3: rgba($RED900, 0.3);
+$RED900_15: rgba($RED900, 0.15);
+$RED900_1: rgba($RED900, 0.1);
+
+//Secondary 辅助色
+$GRY900: #131316;
+$GRY800: #1f1f24;
+$GRY700: #2b2b2e;
+$GRY600: #616161;
+$GRY500: #878787;
+$GRY400: #b8b8b8;
+$GRY350: #ccc;
+$GRY555: #555;
+$GRY300: #e3e3e3;
+$GRY200: #f2f2f2;
+$GRY100: #fafafa;
+$GRY800_6: rgba($GRY800, 0.6);
+
+//Accent 强调色
+$OR950: #965911;
+$OR900: #e59940;
+$OR900_15: rgba($OR900, 0.15);
+$OR900_1: rgba($OR900, 0.1);
+$OR100: #ffaa47;
+$OR100_1: rgba($OR100, 0.1);
+$PP950: #671bb1;
+$PP900: #ad77e1;
+$PP900_15: rgba($PP900, 0.15);
+$PP900_5: rgba($PP900, 0.1);
+
+$transition: all 0.3s cubic-bezier(0.4, 0.4, 0.25, 1.35);

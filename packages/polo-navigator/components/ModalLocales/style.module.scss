@@ -1,0 +1,98 @@
+.locale {
+  width: 452px;
+  min-height: 580px;
+  border-radius: 8px;
+  box-shadow: 0px 6px 16px rgba($BLACK, 0.5);
+  padding-top: 13px;
+  background: $WHITE;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+
+  .tabs {
+    display: flex;
+    padding: 0 25px;
+    padding-top: 20px;
+    position: relative;
+    height: auto;
+    align-items: flex-start;
+    .tab {
+      // display: inline-block;
+      // vertical-align: middle;
+      height: 34px;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 28px;
+      text-align: center;
+      color: $GRY500;
+      cursor: pointer;
+      &:first-child {
+        margin-right: 34px;
+      }
+      &.current {
+        color: $GRY900;
+        font-weight: 600;
+        border-bottom: 3px solid $GRN800;
+      }
+    }
+    .closeCont {
+      flex: 1;
+      text-align: right;
+      .close {
+        width: 11px;
+        height: 11px;
+        background-image: url(~./close.light.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 11px auto;
+        cursor: pointer;
+        display: inline-block;
+        &:active {
+          opacity: 0.5;
+        }
+      }
+    }
+    &::before {
+      content: "";
+      display: block;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: $GRY300;
+      position: absolute;
+    }
+  }
+  .ctx {
+    padding: 16px 26px;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    .item {
+      margin-bottom: 12px;
+      width: 124px;
+      margin-right: 14px;
+      line-height: 2.5;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.5;
+      }
+      &.nmr {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.shadow {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba($BLACK, 0.5);
+}
+
+@import "./dark.module.scss";

@@ -1,0 +1,33 @@
+/**
+ * SCSS method and extension definitions
+ * This file must not output any CSS content and can only be used to define SCSS methods
+ */
+
+// 多主题输出
+@mixin theme($name) {
+  @if not $name {
+    @error "Missing required parameter: theme name";
+  }
+  @if & and #{&} != "html" {
+    @at-root html[data-theme="#{$name}"] & {
+      @content;
+    }
+  } @else {
+    @at-root html[data-theme="#{$name}"] {
+      @content;
+    }
+  }
+}
+
+// 移动设备小屏幕输出
+@mixin mobile-smail() {
+  @media screen and (max-width: 335px) {
+    @content;
+  }
+}
+
+// 常用字段
+%source-sans3-bold {
+  font-family: "source-sans3-bold", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "微软雅黑", "Aril", sans-serif !important;
+}

@@ -1,0 +1,31 @@
+:global(body.dark-theme) {
+  .locale {
+    width: 454px;
+    box-shadow: 0px 6px 16px rgba($BLACK, 0.6);
+    background: $GRY800;
+    border: 1px solid $GRY700;
+    .tabs {
+      .tab {
+        color: $GRY500;
+        cursor: pointer;
+        &.current {
+          color: $WHITE;
+          border-bottom: 3px solid $GRN800;
+        }
+      }
+      .closeCont {
+        .close {
+          background-image: url(~./close.dark.png);
+        }
+      }
+      &::before {
+        background: $GRY700;
+      }
+    }
+    .ctx {
+      .item {
+        color: $WHITE;
+      }
+    }
+  }
+}
