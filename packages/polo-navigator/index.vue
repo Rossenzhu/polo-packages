@@ -1,6 +1,8 @@
 <template>
-  <header :class="[s.wrapper]" id="polo-navigator">
+  <header :class="[s.header]" id="polo-navigator">
     <Nav :class="s.nav" :bodyWidth="bodyWidth" />
+    <NotLogin v-if="bodyWidth > 1024 && !fetchingProfile && !isLogin" />
+    <Login v-if="bodyWidth > 920 && isLogin" />
   </header>
 </template>
 
@@ -38,22 +40,14 @@ onMounted(() => {
 const { t } = useI18n();
 
 const Nav = defineAsyncComponent(() => import("./components/Nav/index.vue"));
+const NotLogin = defineAsyncComponent(() =>
+  import("./components/NotLogin/index.vue")
+);
+const Login = defineAsyncComponent(() =>
+  import("./components/Login/index.vue")
+);
 </script>
 
 <style lang="scss" module="s">
-.wrapper {
-  padding: 12px;
-
-  nav {
-    display: flex;
-
-    li {
-      list-style: none;
-
-      & + li {
-        margin-left: 12px;
-      }
-    }
-  }
-}
+@import "./index.modules.scss";
 </style>

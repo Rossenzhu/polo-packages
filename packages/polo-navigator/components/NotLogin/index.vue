@@ -13,10 +13,9 @@ export default {
   props: {
     block: { type: Boolean, default: false },
   },
-  setup() {
-    return {
-      s: require("./style.module.scss"),
-    };
-  },
 };
 </script>
+
+<style lang="scss" module="s">
+@import "./style.module.scss";
+</style>

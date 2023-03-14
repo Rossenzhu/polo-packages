@@ -26,13 +26,13 @@
     <a href="/activity" :class="s.link">{{ $t("activity") }}</a>
   </div>
 </template>
+
 <script>
 export default {
   components: { Icon: () => import("../Icon") },
-  setup() {
-    return {
-      s: require("./style.module.scss"),
-    };
-  },
 };
 </script>
+
+<style lang="scss" module="s">
+@import "./style.module.scss";
+</style>

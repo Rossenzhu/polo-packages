@@ -62,8 +62,11 @@ export default {
       },
       SUPPORT_BASE_CURRENCIES,
       fiatCurrencySymbol,
-      s: require("./style.module.scss"),
     };
   },
 };
 </script>
+
+<style lang="scss" module="s">
+@import "./style.module.scss";
+</style>

@@ -17,4 +17,8 @@ useEvent("PROFILE_CHANGE", (profile) => {
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.app {
+  padding-top: 50px;
+}
+</style>

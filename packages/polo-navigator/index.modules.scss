@@ -1,0 +1,179 @@
+header.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000000;
+  * {
+    box-sizing: border-box;
+  }
+  display: flex;
+  justify-content: space-between;
+  font-family: "source-sans3-regular";
+  height: 50px;
+  background-color: $WHITE;
+  padding: 0 16px;
+  display: flex;
+  .nav {
+    flex: 1;
+
+    white-space: nowrap;
+  }
+  &::after {
+    display: block;
+    clear: both;
+  }
+}
+
+.optionCont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 8px;
+  .option {
+    width: 24px;
+    height: 24px;
+    margin: 0 8px;
+    cursor: pointer;
+    position: relative;
+  }
+  .locale {
+    color: $GRY700;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-left: 8px;
+  }
+}
+
+.afterArrow {
+  display: inline-block;
+  width: 10px;
+  height: 6px;
+  background-image: url(~./imgs/sarrow.light.png);
+  background-size: 10px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 50ms;
+  margin-left: 4px;
+}
+
+.expand {
+  font-size: 12px;
+  .item {
+    .afterArrow {
+      font-size: 12px;
+      transform: rotateX(180deg) !important;
+    }
+  }
+}
+.optionDropdown {
+  position: relative;
+
+  margin-right: 0;
+  .moreOpts {
+    cursor: pointer;
+    background: $GRY100;
+    position: fixed;
+    min-width: 375px;
+    box-shadow: 0px 4px 8px rgba($BLACK, 0.15);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 16px 8px;
+    top: 50px;
+    right: 0;
+    .subMoreCont .item {
+      font-weight: 400;
+      font-size: 16px;
+    }
+    .item {
+      display: flex;
+      height: 56px;
+      align-items: center;
+      font-weight: 600;
+      font-size: 20px;
+      color: $GRY900;
+      cursor: pointer;
+      padding: 0 12px;
+      border-radius: 4px;
+      &:hover {
+        background-color: $GRY200;
+      }
+      .afterArrow {
+        margin-left: auto;
+      }
+      > i {
+        margin-right: 31px;
+        width: 32px;
+        height: 32px;
+        background-size: 32px auto;
+      }
+    }
+  }
+}
+.btnLogout {
+  display: block;
+  color: $WHITE;
+  background-color: $GRN900;
+  margin: 0 12px;
+  margin-top: 24px;
+  text-align: center;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 20px;
+  height: 46px;
+  line-height: 46px;
+  &:hover {
+    background-color: $GRN950;
+  }
+}
+.shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+:global(.w375) {
+  .optionDropdown .moreOpts {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+  }
+}
+
+:global(body.dark-theme) {
+  header.header {
+    background-color: $GRY800;
+    .locale {
+      color: $WHITE;
+    }
+  }
+  .afterArrow {
+    background-image: url(~./imgs/sarrow.dark.png);
+  }
+  .optionDropdown {
+    .moreOpts {
+      background: $GRY800;
+      .subMoreCont {
+        .item {
+          background: $GRY900;
+          color: $GRY400;
+        }
+      }
+      .item {
+        color: $WHITE;
+        &:hover {
+          background-color: $GRY700;
+        }
+      }
+    }
+  }
+}
