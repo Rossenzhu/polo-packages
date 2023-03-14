@@ -33,12 +33,10 @@ export default {
     const notification = ref([]);
     onMounted(async () => {
       // const { response } = await poloApi(GET_NOTICE, { limit: 100 });
-
-      notification.value = response;
+      // notification.value = response;
     });
 
     return {
-      s: require("./style.module.scss"),
       notification,
       close() {
         ctx.emit("close");
@@ -47,3 +45,7 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" module="s">
+@import "./style.module.scss";
+</style>

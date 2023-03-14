@@ -15,8 +15,11 @@ export default {
     return {
       showMore,
       toggleMore,
-      s: require("../index.module.scss"),
     };
   },
 };
 </script>
+
+<style lang="scss" module="s">
+@import "../index.modules.scss";
+</style>

@@ -14,7 +14,7 @@
       </div>
       <div :class="s.ctx" v-if="currentTab">
         <span
-          v-for="(lang, index) in SUPPORT_LANGUAGE"
+          v-for="(lang, index) in SUPPORT_LANGUAGES"
           :key="lang"
           :class="[s.item, (index + 1) % 3 === 0 && s.nmr]"
           @click="setLanguage(lang)"
@@ -35,30 +35,34 @@
     </div>
   </div>
 </template>
+
 <script>
-import { SUPPORT_LANGUAGE, setLanguage } from "../../i18n";
-import { SUPPORT_BASE_CURRENCIES } from "../../constant";
-import { fiatCurrencySymbol } from "../../lib/common/utils";
-import { useToggle } from "../../use";
+import {
+  SUPPORT_BASE_CURRENCIES,
+  SUPPORT_LANGUAGES,
+  fiatCurrencySymbol,
+} from "@pkg/polo-navigator/constant";
+import { useToggle, useOverideI18n } from "@pkg/polo-navigator/composables";
 
 export default {
   props: {
     setCurrency: Function,
   },
-  setup(props) {
+  setup(props, ctx) {
     const [currentTab, setTab] = useToggle(true);
+    const { setLanguage } = useOverideI18n();
 
     return {
       currentTab,
       setTab,
-      SUPPORT_LANGUAGE,
+      SUPPORT_LANGUAGES,
       setLanguage,
       close() {
-        this.$emit("close");
+        ctx.emit("close");
       },
       handleChange(currency) {
         props.setCurrency(currency);
-        this.$emit("close");
+        ctx.emit("close");
       },
       SUPPORT_BASE_CURRENCIES,
       fiatCurrencySymbol,
