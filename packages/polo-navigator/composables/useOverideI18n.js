@@ -5,7 +5,6 @@ import {
   COOKIE_KEY_LANGUAGE,
   CURRENT_HOST,
 } from "@pkg/polo-navigator/constant";
-import i18n from "@pkg/polo-navigator/i18n";
 
 const useOverideI18n = () => {
   const { locale } = useI18n();
